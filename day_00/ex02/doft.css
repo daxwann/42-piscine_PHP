@@ -1,3 +1,108 @@
 body {
   background-color: #696969;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #929292;
+  display: flex;
+  margin: 1em auto;
+  max-width: 94em;
+  min-width: 50em;
+  width: 80%;
+  height: 6em;
+  padding: 8px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 7px 7px 10px black;
+}
+
+.logo img {
+  width: 20em;
+}
+
+nav {
+  width: 13.5em;
+  height: 100%;
+  position: relative;
+}
+
+.nav_search {
+  width: 12.3em;
+  display: block;
+  float: left;
+}
+
+.nav_controls {
+  width: 1em;
+  display: block;
+  position: absolute;
+}
+
+.nav_controls-reload {
+  right: 5px;
+  top: 5px;
+}
+
+.nav_controls-close {
+  right: 5px;
+  bottom: 5px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.left-side {
+  background-color: #929292;
+  width: 6em;
+  border-radius: 5px;
+  box-shadow: 7px 7px 10px black;
+  align-self: flex-start;
+}
+
+.left-side img {
+  width: 50%;
+  display: block;
+  margin: 10px auto;
+}
+
+.lab {
+  background-color: #929292;
+  width: 60%;
+  min-width: 40em;
+  max-width: 80em;
+  margin: 0 2em;
+  border-radius: 5px;
+  box-shadow: 7px 7px 10px black;
+  text-align: center;
+}
+
+.lab img {
+  width: 100%;
+  text-align: center;
+}
+
+.right-side {
+  background-color: #929292;
+  width: 6em;
+  border-radius: 5px;
+  box-shadow: 7px 7px 10px black;
+  align-self: flex-start;
+}
+
+.right-side img {
+  width: 50%;
+  display: block;
+  margin: 10px auto;
+}
+
+.chat {
+  position: fixed;
+  width: 30em;
+  bottom: 5%;
+  left: 10%;
 }
