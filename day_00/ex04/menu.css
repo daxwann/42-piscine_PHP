@@ -1,0 +1,44 @@
+main {
+  height: 90vh;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.dropdown {
+  border: 1px solid black;
+  width: auto;
+  margin: 5em auto;
+  display: inline-block;
+  text-align: center;
+}
+
+.dropdown_name {
+  font-size: 2em;
+  background-color: blue;
+  color: white;
+  padding: 0.4em;
+  width: auto;
+  display: inline-block;
+}
+
+.dropdown:hover .dropdown_name{
+  background-color: green;
+  cursor: pointer;
+}
+
+.dropdown_content {
+  background-color: gray;
+}
+
+.dropdown_content a {
+  display: block;
+  border-top: 1px solid black;
+  padding: 0.3em;
+}
+
+.dropdown_content:first-child {
+  border-top: none;
+}
