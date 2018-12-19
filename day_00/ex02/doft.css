@@ -1,5 +1,5 @@
 body {
-  background-color: #696969;
+  background-color: #505050;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -62,28 +62,58 @@ main {
   border-radius: 5px;
   box-shadow: 7px 7px 10px black;
   align-self: flex-start;
+  height: 17.5em;
 }
 
 .left-side img {
-  width: 50%;
+  width: 2.5em;
   display: block;
-  margin: 10px auto;
+  margin: 5px auto;
+  padding: 1px;
+  border: 3px solid transparent;
+  border-radius: 3px;
+}
+
+.left-side img:hover {
+  border: 3px solid red;
+  border-radius: 3px;
 }
 
 .lab {
   background-color: #929292;
-  width: 60%;
+  width: 55%;
   min-width: 40em;
   max-width: 80em;
   margin: 0 2em;
   border-radius: 5px;
   box-shadow: 7px 7px 10px black;
-  text-align: center;
+  display: flex;
+  position: relative;
 }
 
 .lab img {
-  width: 100%;
-  text-align: center;
+  width: 98%;
+  height: 98%;
+  display: block;
+  margin: auto auto;
+}
+
+.link-chair {
+  position: absolute;
+  display: block;
+  width: 5em;
+  height: 8em;
+  left: 33%;
+  bottom: 12%;
+}
+
+.link-computer {
+  position: absolute;
+  display: block;
+  width: 8.5em;
+  height: 6.5em;
+  right: 3%;
+  bottom: 18%;
 }
 
 .right-side {
@@ -92,17 +122,56 @@ main {
   border-radius: 5px;
   box-shadow: 7px 7px 10px black;
   align-self: flex-start;
+  height: 17.5em;
 }
 
 .right-side img {
-  width: 50%;
+  width: 3em;
+  height: 3em;
   display: block;
   margin: 10px auto;
 }
 
+.brickwall {
+  width: 5em;
+  margin: 10px auto;
+  height: 3.5em;
+  background-repeat: repeat;
+  background-image: url("./resources/brick.jpg");
+}
+
 .chat {
   position: fixed;
-  width: 30em;
+  width: 20em;
   bottom: 5%;
   left: 10%;
+  background-color: #88FF89;
+  border-radius: 5px;
+  box-shadow: 7px 7px 10px black;
+  padding: 5px 10px;
+}
+
+.chat p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+  font-family: arial;
+}
+
+.chat form {
+  margin: 10px 0 50px;
+}
+
+.input-text {
+  width: 70%;
+}
+
+.font-large {
+  font-size: 2em;
+  font-style: normal;
+  font-family: serif;
+}
+
+.text-shadow {
+  text-shadow: 4px 4px 2px red;
 }
