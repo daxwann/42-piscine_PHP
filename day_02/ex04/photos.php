@@ -23,9 +23,9 @@ function get_img_links($elements, $url)
 	foreach($elements as $element)
 	{
 		$src = preg_replace_callback("/(^.*src=\")(.*?)(\".*?$)/i", "get_img_src", $element);
-		if (preg_match("/(http|www)/i", $src))
+		if (preg_match("/(http|www).*([\.][^\/]+)$/i", $src))
 			$img_links[] = $src;
-		else
+		else if (preg_match("/([\.][^\/]+)$/i", $src))
 			$img_links[] = $url."".$src;
 	}
 	return ($img_links);
