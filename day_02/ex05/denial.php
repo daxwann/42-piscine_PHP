@@ -3,7 +3,7 @@
 	if ($argc != 3)
 		exit();
 
-	function read_lines($file)
+	function create_table($file)
 	{
 		if (!file_exists($file))
 			exit();
@@ -14,24 +14,50 @@
 		{
 			$line = fgets($fd);
 			if (trim($line) != '')
-				$lines[] = $line;
+				$table[] = explode(";", $line);
 		}
-		return ($lines);
+		return ($table);
 	}
 
-	function get_header($lines)
+	function get_header(&$table)
 	{
-		$header = array_shift($lines);
+		$header = array_shift($table);
 		$header = array_map("trim", $header);
 		return ($header);
 	}
 
-	
-	$index = array_search($argv[2], $header);
-	if ($index === false)
-		exit();
-	foreach ($header as $header_i => $header_v)
+	function get_search_index($query, $header)
 	{
+		$index = array_search($query, $header);
+		if ($index === false)
+			exit();
+		return ($index);
+	}
 
-	}	
+	function get_hash($header_col, $search_col, $table)
+	{
+		$hash = array();
+		foreach($table as $row)
+		{
+			if (isset($row[$search_col]))
+				$hash[trim($row[$search_col])] = trim($row[$header_col]);
+		}
+		return ($hash);
+	}
+
+	$table = create_table($argv[1]);
+	$header = get_header($table);
+	$search_col = get_search_index($argv[2], $header);
+	foreach ($header as $header_col => $header_val)
+		$$header_val = get_hash($header_col, $search_col, $table);
+	$stdin = fopen("php://stdin", "r");
+	while ($stdin && !feof($stdin))
+	{
+		echo "Enter your command: ";
+		$command = fgets($stdin);
+		if ($command)
+			eval($command);
+	}
+	fclose($stdin);
+	echo "\n";
 ?>
