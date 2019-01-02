@@ -1,58 +1,56 @@
 <?php
+  $PRIVATE_FOLDER = "../private";
+  $PASSWD_FILE = "../private/passwd";
   function throw_error()
   {
     echo "ERROR\n";
     exit();
   }
 
-  function make_private_folder($path)
+  function make_private_folder($folder)
   {
-    if (!file_exists($path))
-      mkdir($path);
+    if (!file_exists($folder))
+      mkdir($folder);
   }
 
-  function passwd_file_exist($path)
+  function passwd_file_exist($file)
   {
-    if (file_exists($path))
+    if (file_exists($file))
       return (true);
     else
       return (false);
   }
 
-  function open_passwd_file($path)
+  function open_passwd_file($file)
   {
-    $file = file_get_contents($path);
-    $accounts = unserialize($file);
+    $serial = file_get_contents($file);
+    $accounts = unserialize($serial);
     return ($accounts);
-  }
-
-  function create_passwd_file()
-  {
-    file_put_contents("../private/passwd", null);
   }
 
   function create_user($login, $passwd)
   {
-    $new_user['login'] = $_POST['login'];
-    $new_user['passwd'] = hash("whirlpool", $_POST['passwd']);
+    $new_user['login'] = $login;
+    $new_user['passwd'] = hash("whirlpool", $passwd);
     return ($new_user);
   }
 
-  if (!isset($_POST['login']) || !isset($_POST['passwd']) ||
-  !isset($_POST['submit']))
+  if (!$_POST['login'] || !$_POST['passwd'] ||
+  !$_POST['submit'])
     throw_error();
   if ($_POST['submit'] != "OK")
     throw_error();
-  make_private_folder("../private");
-  if (passwd_file_exist("../private/passwd"))
+  make_private_folder($PRIVATE_FOLDER);
+  if (passwd_file_exist($PASSWD_FILE))
   {
-    $accounts = open_passwd_file("../private/passwd");
-    if (array_key_exist($_POST['login'], $account))
-      throw_error();
+    $accounts = open_passwd_file($PASSWD_FILE);
+    foreach ($accounts as $index => $account)
+    {
+      if ($account['login'] === $_POST['login'])
+        throw_error();
+    }
   }
-  else
-    $accounts = array();
   $new_user = create_user($_POST['login'], $_POST['passwd']);
   $accounts[] = $new_user;
-  file_put_contents("../private/passwd", serialize($accounts));
+  file_put_contents($PASSWD_FILE, serialize($accounts));
   echo "OK\n";
