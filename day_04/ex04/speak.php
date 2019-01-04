@@ -9,20 +9,28 @@ function get_new_msg()
 
 function get_log($file)
 {
+  $fd = fopen($file, "r");
+  flock($fd, LOCK_SH);
   $serial = file_get_contents($file);
+  flock($fd, LOCK_UN);
+  fclose($fd);
   $log = unserialize($serial);
   return ($log);
 }
 
-function write_file($log, $file)
+function write_file($file, $log)
 {
   $fd = fopen($file, "w");
-  if (flock($fd, LOCK_EX))
-  {
-    file_put_content($file, serialize($log));
-    flock($fd, LOCK_UN);
-  }
+  flock($fd, LOCK_EX);
+  file_put_contents($file, serialize($log));
+  flock($fd, LOCK_UN);
   fclose($fd);
+}
+
+function throw_error()
+{
+  echo "ERROR\n";
+  exit();
 }
 
 session_start();
@@ -34,9 +42,12 @@ if (file_exists($chat_file))
   $log = get_log($chat_file);
 else
   file_put_contents($chat_file, null);
-$new_message = get_new_msg();
-$log[] = $new_message;
-write_file($log, $chat_file);
+if ($_POST['msg'])
+{
+  $new_message = get_new_msg();
+  $log[] = $new_message;
+  write_file($chat_file, $log);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,11 +55,26 @@ write_file($log, $chat_file);
     <meta charset="utf-8">
     <title>speak</title>
     <script langage="javascript">top.frames['chat'].location = 'chat.php';</script>
+    <style media="screen">
+      form {
+        width: 100%;
+      }
+      form input {
+      }
+      .textbox {
+        display: block;
+        width: 100%;
+      }
+      .btn-submit {
+        width: 10em;
+        background-color: lightblue;
+      }
+    </style>
   </head>
   <body>
-    <form action="speak.php" method="post">
-      <input type="text" name="msg" value=""/>
-      <input type="submit" name="submit" value="Send"/>
+    <form action="speak.php" autocomplete="off" method="post">
+      <input class="textbox" type="text" name="msg" value=""/>
+      <input class="btn" type="submit" name="submit" value="Send"/>
     </form>
   </body>
 </html>
