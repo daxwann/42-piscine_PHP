@@ -4,21 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./menu.css">
-    <title>SNCF Sandwich</title>
+    <title>SNCF</title>
   </head>
   <body>
     <header>
-      <h1>SNCF Sandwich</h1>
+      <h1>SNCF</h1>
+      <nav role="navigation">
+        <ul>
+          <li><a href="#">Drinks</a></li>
+          <li><a href="#">Sandwiches</a>
+            <ul class="dropdown">
+              <li><a href="#">Ham and cheese</a></li>
+              <li><a href="#">Tomato and mozarella</a></li>
+              <li><a href="#">Chicken pesto</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Sides</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-      <div class="dropdown">
-        <div class="dropdown_name">Sandwiches</div>
-        <div class="dropdown_content">
-          <a href="#">Ham and Cheese</a>
-          <a href="#">Chicken Pesto</a>
-          <a href="#">Vegetables</a>
-        </div>
-      </div>
     </main>
     <footer>
       <p>&copy; xwang 2019</p>
