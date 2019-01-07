@@ -1,7 +1,10 @@
 body {
+  position: relative;
   background-color: #505050;
-  max-width: 100%;
+  width: 100%;
   overflow-x: hidden;
+  max-height: 800px;
+  max-width: 1500px;
 }
 
 header {
@@ -10,7 +13,7 @@ header {
   margin: 1em auto;
   max-width: 94em;
   min-width: 50em;
-  width: 80%;
+  width: 85%;
   height: 6em;
   padding: 8px 0;
   justify-content: space-between;
@@ -25,12 +28,13 @@ header {
 
 nav {
   width: 13.5em;
+  padding-right: 5px;
   height: 100%;
   position: relative;
 }
 
 .nav_search {
-  width: 12.3em;
+  width: 12.8em;
   display: block;
   float: left;
 }
@@ -54,19 +58,22 @@ nav {
 main {
   display: flex;
   justify-content: center;
+  max-width: 94em;
+  min-width: 50em;
+  width: 100%;
 }
 
 .left-side {
   background-color: #929292;
-  width: 6em;
+  width: 5.5em;
   border-radius: 5px;
   box-shadow: 7px 7px 10px black;
   align-self: flex-start;
-  height: 17.5em;
+  height: 19em;
 }
 
 .left-side img {
-  width: 2.5em;
+  width: 2.8em;
   display: block;
   margin: 5px auto;
   padding: 1px;
@@ -74,14 +81,14 @@ main {
   border-radius: 3px;
 }
 
-.left-side img:hover {
+#eye {
   border: 3px solid red;
   border-radius: 3px;
 }
 
 .lab {
   background-color: #929292;
-  width: 55%;
+  width: 60%;
   min-width: 40em;
   max-width: 80em;
   margin: 0 2em;
@@ -118,16 +125,16 @@ main {
 
 .right-side {
   background-color: #929292;
-  width: 6em;
+  width: 5.5em;
   border-radius: 5px;
   box-shadow: 7px 7px 10px black;
   align-self: flex-start;
-  height: 17.5em;
+  height: 19em;
 }
 
 .right-side img {
   width: 3em;
-  height: 3em;
+  height: auto;
   display: block;
   margin: 10px auto;
 }
@@ -141,10 +148,10 @@ main {
 }
 
 .chat {
-  position: fixed;
-  width: 20em;
-  bottom: 5%;
-  left: 10%;
+  position: absolute;
+  width: 21em;
+  bottom: -15%;
+  left: 7%;
   background-color: #88FF89;
   border-radius: 5px;
   box-shadow: 7px 7px 10px black;
@@ -159,11 +166,15 @@ main {
 }
 
 .chat form {
-  margin: 10px 0 50px;
+  margin: 5px 0 50px;
 }
 
 .input-text {
   width: 70%;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .font-large {

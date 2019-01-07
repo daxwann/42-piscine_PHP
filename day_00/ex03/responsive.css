@@ -4,11 +4,12 @@ header {
 }
 body {
   background-color: lightgray;
-  min-width: 500px;
+  min-width: 480px;
 }
 div.table {
   display: grid;
   max-width: 1400px;
+  min-width: 480px;
   width: 90%;
   grid-template-columns: repeat(18, 5.4%);
   grid-template-rows: repeat(10, 5em);
@@ -38,7 +39,7 @@ p.weight {
   position: absolute;
   display: inline-block;
   right: 5px;
-  bottom: 5px;
+  top: 5px;
 }
 p.symbol {
   position: absolute;
@@ -178,7 +179,7 @@ div.row10 {
   background-color: #FF3E65;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 799px) {
   p.symbol {
     font-size: 0.5em;
   }
