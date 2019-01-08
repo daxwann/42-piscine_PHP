@@ -7,12 +7,10 @@ if ($argc != 2)
 	exit();
 }
 
-function ft_split($str)
+function pick_ops($str)
 {
-	$arr = str_split($str);
-	$trimmed = array_map('trim', $arr);
-	$ops = array_values(array_filter($trimmed));
-	return ($ops);
+	preg_match('/^\s*(\d+)\s*([\+|\-|\/|\*|\%])\s*(\d+)\s*$/', $str, $matches);
+	return ($matches);
 }
 
 function display_error()
@@ -21,27 +19,27 @@ function display_error()
 	exit();
 }
 
-$ops = ft_split($argv[1]);
-if (count($ops) != 3)
+$ops = pick_ops($argv[1]);
+if (!$ops || in_array("", $ops))
 	display_error();
-if (!is_numeric($ops[0]) || !is_numeric($ops[2]))
+if (!is_numeric($ops[1]) || !is_numeric($ops[3]))
 	display_error();
-switch ($ops[1])
+switch ($ops[2])
 {
 case "+":
-	echo ($ops[0] + $ops[2])."\n";
+	echo ($ops[1] + $ops[3])."\n";
 	break;
 case "-":
-	echo ($ops[0] - $ops[2])."\n";
+	echo ($ops[1] - $ops[3])."\n";
 	break;
 case "*":
-	echo ($ops[0] * $ops[2])."\n";
+	echo ($ops[1] * $ops[3])."\n";
 	break;
 case "/":
-	echo ($ops[0] / $ops[2])."\n";
+	echo ($ops[1] / $ops[3])."\n";
 	break;
 case "%":
-	echo ($ops[0] % $ops[2])."\n";
+	echo ($ops[1] % $ops[3])."\n";
 	break;
 default:
 	display_error();
