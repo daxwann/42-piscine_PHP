@@ -11,46 +11,46 @@ function display_error()
 $format = explode(" ", $argv[1]);
 if (count($format) != 5)
 	display_error();
-if (!preg_match('/^(Lundi|Mardi|Mecredi|Jeudi|Vendredi|Samedi|Dimanche)$/', $format[0]))
+if (!preg_match('/^([Ll]undi|[Mm]ardi|[Mm]ercredi|[Jj]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche)$/', $format[0]))
 	display_error();
 if (!preg_match('/^([1-9]|1[0-9]|2[0-9]|3[0-1])$/', $format[1]))
 	display_error();
 switch ($format[2])
 {
-	case "Janvier":
+	case (preg_match('/^[Jj]anvier$/', $format[2]) ? true : false):
 		$m = "1";
 		break;
-	case "Fevrier":
+	case (preg_match('/^[Ff]evrier$/', $format[2]) ? true : false):
 		$m = "2";
 		break;
-	case "Mars":
+	case (preg_match('/^[Mm]ars$/', $format[2]) ? true : false):
 		$m = "3";
 		break;
-	case "Avril":
+	case (preg_match('/^[Aa]vril$/', $format[2]) ? true : false):
 		$m = "4";
 		break;
-	case "Mai":
+	case (preg_match('/^[Mm]ai$/', $format[2]) ? true : false):
 		$m = "5";
 		break;
-	case "Juin":
+	case (preg_match('/^[Jj]uin$/', $format[2]) ? true : false):
 		$m = "6";
 		break;
-	case "Juillet":
+	case (preg_match('/^[Jj]uillet$/', $format[2]) ? true : false):
 		$m = "7";
 		break;
-	case "Aout":
+	case (preg_match('/^[Aa]out$/', $format[2]) ? true : false):
 		$m = "8";
 		break;
-	case "Septembre":
+	case (preg_match('/^[Ss]eptembre$/', $format[2]) ? true : false):
 		$m = "9";
 		break;
-	case "Octobre":
+	case (preg_match('/^[Oo]ctobre$/', $format[2]) ? true : false):
 		$m = "10";
 		break;
-	case "Novembre":
+	case (preg_match('/^[Nn]ovembre$/', $format[2]) ? true : false):
 		$m = "11";
 		break;
-	case "Decembre":
+	case (preg_match('/^[Dd]ecembre$/', $format[2]) ? true : false):
 		$m = "12";
 		break;
 	default:
