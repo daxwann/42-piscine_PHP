@@ -9,7 +9,7 @@ if ($argc != 2)
 
 function pick_ops($str)
 {
-	preg_match('/^\s*(\d+)\s*([\+|\-|\/|\*|\%])\s*(\d+)\s*$/', $str, $matches);
+	preg_match('/^\s*(\S+)\s*([\+|\-|\/|\*|\%])\s*(\S+)\s*$/', $str, $matches);
 	return ($matches);
 }
 

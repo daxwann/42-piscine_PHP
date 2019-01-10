@@ -10,6 +10,9 @@ $num1 = trim($argv[1]);
 $op = trim($argv[2]);
 $num2 = trim($argv[3]);
 
+if (!is_numeric($num1) || !is_numeric($num2))
+	display_error();
+
 switch ($op)
 {
 case "+":
