@@ -14,7 +14,7 @@ function replace_matches($all_matches)
 
 function replace_link_content($link_matches)
 {
-	$title_attr = "/(<.*title=\")(.*?)(\")/mi";
+	$title_attr = "/(title=\")([^\"]*?)(\">)/msi";
 	$all_content = "/(>)(.*?)(<)/msi";
 
 	$link_matches[0] = preg_replace_callback($title_attr, "replace_matches", $link_matches[0]);
