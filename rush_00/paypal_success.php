@@ -55,19 +55,6 @@ session_start();
 
 			$total += $product;
 
-      ?>
-
-      <tr align="center">
-        <td><?php echo $pro_name; ?></td>
-        <td><?php echo $p_price['qty'];?></td>
-        <td><?php echo "$" . $product_price; ?></td>
-      </tr>
-
-
-    <?php  } ?>
-
-
-<?php
 			//getting Quantity of the product
 			$get_qty = "SELECT * FROM cart WHERE p_id='$pro_id'";
 
@@ -88,24 +75,33 @@ session_start();
 			$row_c = mysqli_fetch_array($run_c);
 
 			$c_id = $row_c['customer_id'];
-			$c_email = $row_c['customer_email'];
-			$c_name = $row_c['customer_name'];
 
 
 				// inserting the order into table
-				$insert_order = "INSERT INTO orders (p_id, c_id, qty, order_date) values ('$pro_id','$c_id','$qty','$invoice', NOW())";
+				$insert_order = "INSERT INTO orders (p_id, c_id, qty, order_date) values ('$pro_id','$c_id','$qty', NOW())";
 				$run_order = mysqli_query($con, $insert_order);
 
+
+      ?>
+
+      <tr align="center">
+        <td><?php echo $pro_name; ?></td>
+        <td><?php echo $p_price['qty'];?></td>
+        <td><?php echo "$" . $product_price; ?></td>
+      </tr>
+
+
+    <?php  } ?>
+
+
+<?php
+			
 				//removing the products from cart
 				$empty_cart = "DELETE from cart";
 				$run_cart = mysqli_query($con, $empty_cart);
 
 
-			$headers = "MIME-Version: 1.0" . "\r\n";
-			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-			$headers .= 'From: <sales@onlinetuting.com>' . "\r\n";
-
-			$subject = "Order Details";
+		
 ?>
 </table>
 </body>

@@ -20,8 +20,7 @@ include("functions/functions.php");
 		<!--Header starts here-->
 		<div class="header_wrapper">
 		
-			<a href="../index.php"><img id="logo" src="images/logo.gif" /> </a>
-			<img id="banner" src="images/ad_banner.gif" />
+			<a href="../index.php"><img id="logo" src="../images/logo.png" /> </a>
 		</div>
 		<!--Header ends here-->
 		
@@ -64,7 +63,6 @@ include("functions/functions.php");
 				
 				
 				?>
-				<li><a href="my_account.php?my_orders">My Orders</a></li>
 				<li><a href="my_account.php?edit_account">Edit Account</a></li>
 				<li><a href="my_account.php?change_pass">Change Password</a></li>
 				<li><a href="my_account.php?delete_account">Delete Account</a></li>
