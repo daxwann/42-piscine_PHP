@@ -36,18 +36,22 @@ if(isset($_GET['add_cart'])){
 
 	$run_check = mysqli_query($con, $check_pro);
 
-	if(mysqli_num_rows($run_check)>0){
-
-	echo "";
-
-	}
-	else {
-
-	$insert_pro = "insert into cart (p_id,ip_add,qty) values ('$pro_id','$ip', 1)";
+	if(mysqli_num_rows($run_check) == 0)
+	{
+	
+	$insert_pro = "insert into cart (p_id,ip_add,qty) values ('$pro_id','$ip', '1')";
 
 	$run_pro = mysqli_query($con, $insert_pro);
 
 	echo "<script>window.open('index.php','_self')</script>";
+	}
+	else
+	{
+		$p_price=mysqli_fetch_array($run_check);
+		$qty = $p_price['qty'] + 1;
+		$edit_qty = "UPDATE cart SET qty ='$qty' WHERE ip_add='$ip' AND p_id='$pro_id';";
+		$run_pro = mysqli_query($con, $edit_qty);
+		echo "<script>window.open('index.php','_self')</script>";
 	}
 
 }

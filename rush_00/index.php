@@ -103,7 +103,7 @@ include("functions/functions.php");
 
 
 		<div id="footer">
-<p>dsfafs</p>
+<p>Xiaoda and Valerie</p>
 		</div>
 
 	</div>

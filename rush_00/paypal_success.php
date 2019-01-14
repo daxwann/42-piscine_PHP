@@ -66,10 +66,6 @@ session_start();
 
     <?php  } ?>
 
-<tr>
-  <td colspan="4" align="right"><b>Sub Total:</b></td>
-  <td><?php echo "$" . $total;?></td>
-</tr>
 
 <?php
 			//getting Quantity of the product

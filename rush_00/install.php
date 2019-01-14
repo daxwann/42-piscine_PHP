@@ -91,7 +91,7 @@
   $create_table_cart = "CREATE TABLE cart
       (p_id INT(10) PRIMARY KEY NOT NULL,
       ip_add VARCHAR(255) NOT NULL,
-      qty INT NOT NULL);";
+      qty INT DEFAULT 0 NOT NULL);";
   query_table($db_link, "cart", $create_table_cart);
 
   $create_table_order = "CREATE TABLE `orders`
