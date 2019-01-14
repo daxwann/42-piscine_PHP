@@ -2,7 +2,6 @@
 <?php
 session_start();
 include("functions/functions.php");
-
 ?>
 <html>
 	<head>
@@ -20,8 +19,7 @@ include("functions/functions.php");
 		<!--Header starts here-->
 		<div class="header_wrapper">
 
-			<a href="index.php"><img id="logo" src="images/logo.gif" /> </a>
-			<img id="banner" src="images/ad_banner.gif" />
+			<a href="index.php"><img id="logo" src="includes/sup_logo_lg.png" style="display: block;width:50%;margin:0 auto;"/> </a>
 		</div>
 		<!--Header ends here-->
 
@@ -29,11 +27,11 @@ include("functions/functions.php");
 		<div class="menubar">
 
 			<ul id="menu">
-				<li><a href="index.php">Home</a></li>
+				<li><a style="text-align: center" href="index.php">Home</a></li>
 				
-				<li><a href="customer/my_account.php">My Account</a></li>
+				<li><a style="text-align: center" href="customer/my_account.php">My Account</a></li>
 				
-				<li><a href="cart.php">Shopping Cart</a></li>
+				<li><a style="text-align: center" href="cart.php">Shopping Cart</a></li>
 				
 
 			</ul>
@@ -75,21 +73,14 @@ include("functions/functions.php");
 					}
 					?>
 
-					<b style="color:yellow">Shopping Cart -</b> Total Items: <?php total_items();?> Total Price: <?php total_price(); ?> <a href="cart.php" style="color:yellow">Go to Cart</a>
-
-
+					<a href="cart.php"><b><button>Shopping Cart -</b> Total Items: <?php total_items();?> Total Price: <?php total_price(); ?></button></a>
 					<?php
 					if(!isset($_SESSION['customer_email'])){
-
-					echo "<a href='checkout.php' style='color:orange;'>Login</a>";
-
+					echo "<a href='checkout.php'><button>Login</button></a>";
 					}
 					else {
-					echo "<a href='logout.php' style='color:orange;'>Logout</a>";
+					echo "<a href='logout.php'><button>Logout</button></a>";
 					}
-
-
-
 					?>
 
 
@@ -101,7 +92,7 @@ include("functions/functions.php");
 
 				<?php getPro(); ?>
 				<?php getCatPro(); ?>
-				<?php getBrandPro(); ?>
+			
 
 				</div>
 

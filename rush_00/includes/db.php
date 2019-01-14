@@ -1,7 +1,7 @@
-<?php 
+<?php
 // After uploading to online server, change this connection accordingly
 
-$con = mysqli_connect("localhost","root","root","ecommerce");
+$con = mysqli_connect("localhost","root","root","db_minishop");
 
 if (mysqli_connect_errno())
   {
