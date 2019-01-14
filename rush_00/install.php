@@ -64,7 +64,7 @@
 	'vans.jpg'),
 	(3, 'The 10 Nike X OFF', 450, '<p>Tulip pink Nikes</p>',
 	'nikes.png'),
-	(3, 'Yeezy 350', 400, '<p>Frozen yellow sneakers</p>',
+	(3, 'Yeezy 350', 400, '<p>Frozen red sneakers</p>',
 	'yeezy.jpg'),
 	(3, 'Jordan Retro 11', 350, '<p>Retro black-and-white Jordans</p>',
 	'jordans.jpg');";
@@ -101,3 +101,13 @@
   `qty` int(100) NOT NULL,
   `order_date` date NOT NULL);";
 query_table($db_link, "orders", $create_table_order);
+
+$insert_admins = "INSERT INTO admins (
+	`user_email`, `user_pass`) VALUES
+    ('xwang@gmail.com', 'xwang'),
+    ('rhayat@gmail.com', 'rhayat');";
+  query_table($db_link, "admins", $insert_admins);
+
+  $insert_customers = "INSERT INTO customers (customer_name, customer_email, customer_pass, customer_address) VALUES
+  ('John', 'john@gmail.com', 'john1', '100 fremont ave'), ('tyler', 'tyler@gmail.com', 'tyler1', '200 Sillicon Vally');";
+  query_table($db_link, "customers", $insert_customers);

@@ -55,14 +55,13 @@ include("functions/functions.php");
 				
 				<ul>
 				
-		
-			<div id="content_area">
+</div>
 			
 			<div id="shopping_cart"> 
 					
 					<span style="float:right; font-size:18px; padding:5px; line-height:40px;">
 					
-					Welcome Guest! <b style="color:yellow">Shopping Cart -</b> Total Items: Total Price: <a href="cart.php" style="color:yellow">Go to Cart</a>
+					Welcome Guest! <b style="color:red">Shopping Cart -</b> Total Items: Total Price: <a href="cart.php" style="color:red">Go to Cart</a>
 					
 					
 					

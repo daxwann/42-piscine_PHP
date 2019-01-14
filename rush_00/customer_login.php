@@ -22,9 +22,6 @@ include("includes/db.php");
 				<td><input type="password" name="pass" placeholder="enter password" required/></td>
 			</tr>
 			
-			<tr align="center">
-				<td colspan="3"><a href="checkout.php?forgot_pass">Forgot Password?</a></td>
-			</tr>
 			
 			<tr align="center">
 				<td colspan="3"><input type="submit" name="login" value="Login" /></td>
@@ -77,7 +74,7 @@ include("includes/db.php");
 		$_SESSION['customer_email']=$c_email; 
 		
 		echo "<script>alert('You logged in successfully, Thanks!')</script>";
-		echo "<script>window.open('checkout.php','_self')</script>";
+		echo "<script>window.open('index.php','_self')</script>";
 		
 		
 		}

@@ -29,7 +29,7 @@ footer, header, hgroup, menu, nav, section {
 
 
 
-body {background:skyblue;}
+body {background:white;}
 
 
 
@@ -37,7 +37,7 @@ body {background:skyblue;}
 width:1000px;
 height:auto;
 margin:auto;
-background:pink;
+background:white;
 }
 
 .header_wrapper{
@@ -87,14 +87,14 @@ font-family:COMIC SANS MS;
 .content_wrapper {
 width:1000px;
 margin:auto;
-background:pink;
+background:white;
 
 }
 
 #content_area {
 width:800px;
 float:left;
-background:pink;
+background:white;
 }
 
 #sidebar {
@@ -143,7 +143,7 @@ margin-bottom:10px;
 #footer {
 width:1000px;
 height:100px;
-background:gray;
+background:black;
 clear:both;
 
 

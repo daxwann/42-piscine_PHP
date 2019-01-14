@@ -27,7 +27,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-body {background:skyblue;}
+body {
+	background:white;
+	font-family: monospace;}
 
 .main_wrapper{
 width:1000px;
@@ -40,7 +42,7 @@ margin:auto;
 	width:1000px;
 	height:120px;
 	background-image:url(../images/bg-header.jpg);
-	border-bottom:5px groove orange;
+	border-bottom:5px groove white;
 }
 
 #left{
@@ -53,7 +55,7 @@ float:left;
 width:200px;
 height:800px;
 float:right;
-border-left:5px groove orange;
+border-left:5px groove white;
 background:#187eae;
 }
 

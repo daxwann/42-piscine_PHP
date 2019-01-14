@@ -29,11 +29,11 @@ include("functions/functions.php");
 		<div class="menubar">
 			
 			<ul id="menu">
-				<li><a href="ecommerce/index.php">Home</a></li>
+				<li><a href="../index.php">Home</a></li>
 
-				<li><a href="customer/my_account.php">My Account</a></li>
+				<li><a href="my_account.php">My Account</a></li>
 				
-				<li><a href="cart.php">Shopping Cart</a></li>
+				<li><a href="../cart.php">Shopping Cart</a></li>
 				
 			
 			</ul>
@@ -83,7 +83,7 @@ include("functions/functions.php");
 					
 					<span style="float:right; font-size:17px; padding:5px; line-height:40px;">
 					
-					<?php 
+					<?php
 					if(isset($_SESSION['customer_email'])){
 					echo "<b>Welcome:</b>" . $_SESSION['customer_email'] ;
 					
@@ -94,7 +94,7 @@ include("functions/functions.php");
 					<?php 
 					if(!isset($_SESSION['customer_email'])){
 					
-					echo "<a href='checkout.php' style='color:orange;'>Login</a>";
+					echo "<a href='../customer_login.php' style='color:orange;'>Login</a>";
 					
 					}
 					else {

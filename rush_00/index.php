@@ -19,7 +19,7 @@ include("functions/functions.php");
 		<!--Header starts here-->
 		<div class="header_wrapper">
 
-			<a href="index.php"><img id="logo" src="includes/sup_logo_lg.png" style="display: block;width:50%;margin:0 auto;"/> </a>
+			<a href="index.php"><img id="logo" src="images/logo.png" style="display: block;width:50%;margin:0 auto;"/> </a>
 		</div>
 		<!--Header ends here-->
 
@@ -66,7 +66,7 @@ include("functions/functions.php");
 
 					<?php
 					if(isset($_SESSION['customer_email'])){
-					echo "<b>Welcome:</b>" . $_SESSION['customer_email'] . "<b style='color:yellow;'>Your</b>" ;
+					echo "<b>Welcome:</b>" . $_SESSION['customer_email'] . "<b style='color:red;'>Your</b>" ;
 					}
 					else {
 					echo "<b>Welcome Guest:</b>";
@@ -76,7 +76,7 @@ include("functions/functions.php");
 					<a href="cart.php"><b><button>Shopping Cart -</b> Total Items: <?php total_items();?> Total Price: <?php total_price(); ?></button></a>
 					<?php
 					if(!isset($_SESSION['customer_email'])){
-					echo "<a href='checkout.php'><button>Login</button></a>";
+					echo "<a href='customer_login.php'><button>Login</button></a>";
 					}
 					else {
 					echo "<a href='logout.php'><button>Logout</button></a>";
