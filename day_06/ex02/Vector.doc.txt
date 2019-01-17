@@ -1,0 +1,32 @@
+<- Vector ----------------------------------------------------------------------
+The Vector class represents diections or movements of points in space.
+
+An instance of Vector class is represented by following attributes:
+
+	* _x magnitude
+	* _y magnitude
+	* _z magnitude
+	* _w coordinate
+
+Vector class includes following public methods:
+
+	- float magnitude() : returns vector's length (or "norm").
+
+	- Vector normalize() : returns a normalized version of the vector.
+
+	- Vector add( Vector $rhs ) : returns the sum vector.
+
+	- Vector sub( Vector $rhs ) : returns the difference vector.
+
+	- Vector opposite() : returns the opposite Vector.
+
+	- Vector scalarProduct( $k ) : returns the product of vector with a scalar.
+
+	- float dotProduct( Vector $v ) : returns the scalar product of the current
+	instance and $v.
+
+	- float cos( Vector $rhs ) : returns the angle's cosine between vectors.
+
+	- Vector crossProduct( Vector $rhs ) : returns the cross product of vectors.
+	
+---------------------------------------------------------------------- Vector ->
