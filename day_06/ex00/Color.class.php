@@ -69,5 +69,3 @@ class Color {
         }
     }
 }
-
-$newRed = new Color(array("rgb" => 16711680));

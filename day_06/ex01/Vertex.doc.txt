@@ -1,0 +1,16 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex Class offers a coordinate encapsulation and provides reading and
+writing assessors.
+
+The Vertex class present a point in space according to five characteristics:
+
+	* x-axis coordinate
+	* y-axis coordinate
+	* z-depth coordinate
+	* homogeneous coordinate 'w'
+	* color (instance of Color class)
+
+new Vertex( array( 'x'=>1.0, 'y'=>0.0, 'z'=>0.0, 'w'=>2.0, 'color'=>new Color);
+
+Default values for 'w' and 'color' are 1.0 and white (0xFFFFFF)
+---------------------------------------------------------------------- Vertex ->
