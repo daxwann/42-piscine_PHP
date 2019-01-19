@@ -7,20 +7,70 @@
 </head>
 <body>
     <main>
-        <form action="calc.html" method="GET">
-            <input name="num1" type="number">
-            <select name="operator">
+        <div>
+            <input class="number" id="num1" name="num1" type="number">
+            <select name="operator" id="op">
                 <option value="+">+</option>
                 <option value="-">-</option>
                 <option value="*">*</option>
                 <option value="/">/</option>
                 <option value="%">%</option>
             </select>
-            <input name="num2" type="number">
-        </form>
+            <input class="number" id="num2" name="num2" type="number">
+            <button id="confirm">Try me!</button>
+        </div>
     </main>
     <script>
+        var confirm = document.getElementById("confirm");
 
+        setInterval(function() {
+            alert("please, use me...");
+        }, 30000);
+
+        confirm.onclick = function(event) {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var op = document.getElementById("op").value;
+            
+            function calculate(num1, num2, op) {
+                switch (op) {
+                    case "+":
+                        console.log(num1+num2);
+                        alert(num1+num2);
+                        break;
+                    case "-":
+                        console.log(num1-num2);
+                        alert(num1-num2);
+                        break;
+                    case "/":
+                        console.log(num1/num2);
+                        alert(num1/num2);
+                        break;
+                    case "*":
+                        console.log(num1*num2);
+                        alert(num1*num2);
+                        break;
+                    case "%":
+                        console.log(num1%num2);
+                        alert(num1%num2);
+                        break;
+                    default:
+                        console.log("Error :(");
+                        alert("Error :(");
+                }
+            } 
+            if (num1 < 0 || num2 < 0) {
+                alert("Error :(");
+                console.log("Error :(");
+            }
+            else if ((op == "/" || op == "%") && num2 == 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+            }
+            else
+                calculate(num1, num2, op);
+        }; 
+        
     </script>
 </body>
 </html>
