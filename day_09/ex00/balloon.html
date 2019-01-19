@@ -9,7 +9,6 @@
             overflow: hidden;
         }
         #balloon {
-            background-color: red;
             border-radius: 50%;
             margin: 25% auto;
             transition: all 0.2s;
@@ -37,8 +36,6 @@
             return size;
         }
 
-       
-
         function setSize(ele, size) {
             var pixel = intToPx(size);
             ele.style.setProperty('width', pixel);
@@ -57,14 +54,37 @@
                 setSize(ele, 200);
         }
 
+        function getColor(ele) {
+            var color = ele.style.backgroundColor;
+            return color;
+        }
+
+        function setColor(ele, color) {
+            ele.style.setProperty('background-color', color);
+        }
+
+        function switchColor(ele, direction) {
+            var colors = ['red', 'green', 'blue'];
+            var color = getColor(ele);
+            var index = colors.indexOf(color);
+            
+            if (direction = "forward")
+                setColor(ele, colors[(index + 1) % 3]);
+            else if (direction = "reverse")
+                setColor(ele, colors[2 - index]);
+        }
+
         balloon.onclick = function(event) {
             increaseSize(balloon, checkSize);
+            switchColor(balloon, "forward");
         }
 
         balloon.onmouseout = function(event) {
             var size = getSize(balloon);
-            if (size >= 205)
+            if (size >= 205) {
                 setSize(balloon, size - 5);
+                switchColor(balloon, "reverse");
+            }
         }
     </script>
 </body>
