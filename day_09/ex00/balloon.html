@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Balloon</title>
+    <style>
+        body {
+            height: 90vh;
+            overflow: hidden;
+        }
+        #balloon {
+            background-color: red;
+            border-radius: 50%;
+            margin: 25% auto;
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="balloon" style="width: 200px; height: 200px; background-color: red;"></div>
+    </main>
+    <script>
+        var balloon = document.getElementById("balloon");
+        
+        function pxToInt(pixel) {
+            var width = Number(pixel.split("px")[0]);
+            return width;
+        }
+
+        function intToPx(int) {
+            return int.toString().concat("px");
+        }
+
+        function getSize(ele) {
+            var size = pxToInt(ele.style.width);
+            return size;
+        }
+
+       
+
+        function setSize(ele, size) {
+            var pixel = intToPx(size);
+            ele.style.setProperty('width', pixel);
+            ele.style.setProperty('height', pixel);
+        }
+
+        function increaseSize(ele, checkSize) {
+            var size = getSize(ele);
+            size = size + 10;
+            setSize(ele, size);
+            checkSize(ele, size);
+        }
+
+        function checkSize(ele, size) {
+            if (size > 420)
+                setSize(ele, 200);
+        }
+
+        balloon.onclick = function(event) {
+            increaseSize(balloon, checkSize);
+        }
+
+        balloon.onmouseout = function(event) {
+            var size = getSize(balloon);
+            if (size >= 205)
+                setSize(balloon, size - 5);
+        }
+    </script>
+</body>
+</html>
