@@ -14,6 +14,7 @@ var toDoList = {
 
     saveCookie: function(){
       document.cookie = "toDoList=" + this.toDos.join();
+      console.log(this.toDos);
     },
 
     loadCookie: function(){
@@ -32,17 +33,14 @@ var toDoList = {
   //Display list
   var view = {
     displayToDos: function(){
-      var ft_list = document.querySelector("#ft_list");
-      ft_list.innerHTML = '';
+      var ft_list = $("#ft_list");
+      ft_list.empty();
       for(var i = 0; i < toDoList.toDos.length; i++){
         var toDo = toDoList.toDos[i];
         if (toDo != "") {
-        var toDosLi = document.createElement("div");
-        toDosLi.setAttribute("class", "toDo");
-        toDosLi.setAttribute("id", `${i}`);
-        toDosLi.setAttribute("onclick", "handlers.deleteToDo(this.id)");
-        toDosLi.textContent = toDo;
-        ft_list.appendChild(toDosLi);
+        var toDosLi = $("<div>", {"class": "toDo", "id": `${i}`, "onclick": "handlers.deleteToDo(this.id)"});
+        toDosLi.text(toDo);
+        ft_list.append(toDosLi);
         }
       }
     }
@@ -57,7 +55,7 @@ var toDoList = {
     
     addToDo: function(){
       var task = prompt("What's the task you want to add?");
-      if (task != '' && task != null) {
+      if (task != "" && task != null) {
         toDoList.addToDos(task);
         view.displayToDos();
         toDoList.saveCookie();

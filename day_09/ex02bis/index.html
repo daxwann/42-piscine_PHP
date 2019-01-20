@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="utf-8">
+      <title>To Do List</title>
+      <style>
+        h1 {
+          text-align: center;
+        }
+
+        #ft_list {
+          width: 400px;
+          margin: 100px auto;
+          background-color: #f7f7f7;
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toDo {
+          background-color: lightblue;
+          margin-bottom: 5px;
+          padding: 5px;
+          font-size: 18px;
+        }
+
+        .toDo:hover {
+          cursor: pointer;
+        }
+
+        #add {
+          font-size: 20px;
+          background-color: lightblue;
+        }
+      </style>
+  </head>
+
+  <body>
+    <h1>To-Do List!</h1>
+    
+    <div>
+      <button id="add" onclick="handlers.addToDo()">New</button>
+    </div>
+    
+    
+    <div id="ft_list"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+    crossorigin="anonymous"></script>
+    <script src="todo.js"></script>
+  </body>
+
+</html>
