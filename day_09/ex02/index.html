@@ -4,32 +4,45 @@
   <head>
       <meta charset="utf-8">
       <title>To Do List</title>
+      <style>
+        h1 {
+          text-align: center;
+        }
+
+        #ft_list {
+          width: 400px;
+          margin: 100px auto;
+          background-color: #f7f7f7;
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toDo {
+          background-color: lightblue;
+          margin-bottom: 5px;
+          padding: 5px;
+          font-size: 18px;
+        }
+
+        .toDo:hover {
+          cursor: pointer;
+        }
+
+        #add {
+          font-size: 20px;
+          background-color: lightblue;
+        }
+      </style>
   </head>
 
   <body>
     <h1>To-Do List!</h1>
+    
     <div>
-      <button onclick="handlers.toggleAll()">Toggle All</button>
-    </div>
-    <div>
-      <button onclick="handlers.addToDo()">Add</button>
-      <input id="addToDo" type="text"/>
-    </div>
-    <div>
-      <button onclick="handlers.changeToDo()">Change</button>
-      <input type="number" id="changeToDoPosition" />
-      <input type="text" id="changeToDoText" />
-    </div>
-    <div>
-      <button onclick="handlers.deleteToDo()">Delete</button>
-      <input type="number" id="deleteToDoPosition" />
-    </div>
-    <div>
-      <button onclick="handlers.toggleToDo()">Toggle completed</button>
-      <input type="number" id="toggleToDoPosition" />
+      <button id="add" onclick="handlers.addToDo()">New</button>
     </div>
     
-    <ul></ul>
+    
+    <div id="ft_list"></div>
     <script src="todo.js"></script>
   </body>
 
