@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <main>
+        <div>
+            <input class="number" id="num1" name="num1" type="number">
+            <select name="operator" id="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input class="number" id="num2" name="num2" type="number">
+            <button id="confirm">Try me!</button>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+    crossorigin="anonymous"></script>
+    <script>
+        var confirm = $("#confirm");
+
+        setInterval(function() {
+            alert("please, use me...");
+        }, 30000);
+
+        confirm.click(function(event) {
+            var num1 = Number($("#num1").val());
+            console.log(num1);
+            var num2 = Number($("#num2").val());
+            console.log(num2);
+            var op = $("#op").val();
+            
+            function calculate(num1, num2, op) {
+                switch (op) {
+                    case "+":
+                        console.log(num1+num2);
+                        alert(num1+num2);
+                        break;
+                    case "-":
+                        console.log(num1-num2);
+                        alert(num1-num2);
+                        break;
+                    case "/":
+                        console.log(num1/num2);
+                        alert(num1/num2);
+                        break;
+                    case "*":
+                        console.log(num1*num2);
+                        alert(num1*num2);
+                        break;
+                    case "%":
+                        console.log(num1%num2);
+                        alert(num1%num2);
+                        break;
+                    default:
+                        console.log("Error :(");
+                        alert("Error :(");
+                }
+            } 
+            if (num1 < 0 || num2 < 0) {
+                alert("Error :(");
+                console.log("Error :(");
+            }
+            else if ((op == "/" || op == "%") && num2 == 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+            }
+            else
+                calculate(num1, num2, op);
+        }); 
+        
+    </script>
+</body>
+</html>
