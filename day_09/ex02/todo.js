@@ -35,14 +35,15 @@ var toDoList = {
       var ft_list = document.querySelector("#ft_list");
       ft_list.innerHTML = '';
       for(var i = 0; i < toDoList.toDos.length; i++){
+        var toDo = toDoList.toDos[i];
+        if (toDo != "") {
         var toDosLi = document.createElement("div");
         toDosLi.setAttribute("class", "toDo");
         toDosLi.setAttribute("id", `${i}`);
         toDosLi.setAttribute("onclick", "handlers.deleteToDo(this.id)");
-        var toDo = toDoList.toDos[i];
-       
         toDosLi.textContent = toDo;
         ft_list.appendChild(toDosLi);
+        }
       }
     }
   }
